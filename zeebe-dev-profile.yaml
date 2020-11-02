@@ -4,7 +4,7 @@ zeebe:
   replicationFactor: 1
   elasticsearch:
     imageTag: 6.8.5 
-    replicas: 2
+    replicas: 1
     minimumMasterNodes: 1
 # Permit co-located instances for solitary minikube virtual machines.
     antiAffinity: "soft"
