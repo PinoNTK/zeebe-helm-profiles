@@ -7,8 +7,8 @@ image:
 clusterSize: 3
 partitionCount: 3
 replicationFactor: 3
-cpuThreadCount: 4
-ioThreadCount: 4
+cpuThreadCount: 2
+ioThreadCount: 2
 gatewayMetrics: true
 
 podSecurityContext:
@@ -32,7 +32,7 @@ gateway:
     - name: ZEEBE_GATEWAY_MONITORING_ENABLED
       value: "true"
     - name: ZEEBE_GATEWAY_THREADS_MANAGEMENTTHREADS
-      value: "4"
+      value: "2"
 
 # Uncomment to add custom YAML configuration
 # This will overwrite anything at the application.yml location
@@ -71,15 +71,15 @@ env:
 # RESOURCES
 resources:
   limits:
-    cpu: 5
-    memory: 12Gi
+    cpu: 2
+    memory: 6Gi
   requests:
-    cpu: 5
-    memory: 12Gi
+    cpu: 2
+    memory: 6Gi
 
 # PVC
 pvcAccessMode: ["ReadWriteOnce"]
-pvcSize: 128Gi
+pvcSize: 10Gi
 pvcStorageClassName: ssd
 
 
@@ -96,17 +96,17 @@ elasticsearch:
     storageClassName: "ssd"
     resources:
       requests:
-        storage: 600Gi
+        storage: 3Gi
 
   esJavaOpts: "-Xmx4g -Xms4g"
 
   resources:
     requests:
-      cpu: 3
-      memory: 8Gi
+      cpu: 2
+      memory: 2Gi
     limits:
-      cpu: 3
-      memory: 8Gi
+      cpu: 2
+      memory: 2Gi
 
 # KIBANA
 kibana:
