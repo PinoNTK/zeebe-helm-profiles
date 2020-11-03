@@ -1,7 +1,7 @@
 zeebe:
-  clusterSize: 1
-  partitionCount: 1
-  replicationFactor: 1
+  clusterSize: 2
+  partitionCount: 2
+  replicationFactor: 2
   elasticsearch:
     imageTag: 6.8.5 
     replicas: 1
@@ -16,11 +16,11 @@ zeebe:
 # Allocate smaller chunks of memory per pod.
     resources:
       requests:
-        cpu: "100m"
-        memory: "512M"
+        cpu: "10m"
+        memory: "51M"
       limits:
-        cpu: "1000m"
-        memory: "512M"
+        cpu: "10m"
+        memory: "51M"
 
 # Request smaller persistent volumes.
     volumeClaimTemplate:
